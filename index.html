@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Internet Of Plants</title>
+  <link rel="icon" href="img/FlowerpotPlant.ico">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <!-- Font CSS -->
+  <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
+  <!-- Local Style -->
+  <link rel="stylesheet" type="text/css" href="style/style.css" title="style" />
+  
+  <!-- FusionCharts -->
+  <script type="text/javascript" src="https://static.fusioncharts.com/code/latest/fusioncharts.js"></script>
+  <script type="text/javascript" src="https://static.fusioncharts.com/code/latest/themes/fusioncharts.theme.fint.js?cacheBust=56"></script>
+  <script type="text/javascript" src="Temperature.js"></script>
+  <script type="text/javascript" src="Moisture.js"></script>
+  <script type="text/javascript" src="Humidity.js"></script>
+  <script type="text/javascript" src="Light.js"></script>
+
+
+    <script src="mqttws31.js" type="text/javascript"></script>
+    <script src="demo.js" type="text/javascript"></script>
+
+<!-- Decrypt -->
+  <script type="text/javascript" src="Decrypt.js"></script>
+  <script type="text/javascript" src="https://static.fusioncharts.com/code/latest/fusioncharts.widgets.js"></script>
+
+  
+</head>
+<body>
+
+<!-- Background -->
+<div class="overlay"> 
+	<div class="container-fluid">
+	
+	<h1><b>Internet Of Plants</b></h1>
+
+        <button onclick="client.connect(options);">1. Connect</button>
+        <button onclick="client.subscribe('#', {qos: 2}); alert('Subscribed');">2. Subscribe</button>
+        <button onclick="publish('Hello Foo !','testtopic/bar',2);">3. Publish</button>
+        <button onclick="client.disconnect();">(4. Disconnect)</button>
+        <div id="messages"></div>
+	
+	<!-- Four Rows -->
+    <div class="row">
+      <div class="col">
+		<div id="chart-container">FusionCharts will render here</div>
+	  </div>
+	  
+      <div class="col">
+		<div id="chart-moisture">FusionCharts XT will load here!</div>
+	  </div>
+	  
+      <div class="col">
+		<div id="chart-humidity">FusionCharts XT will load here!</div>
+	  </div>
+	  
+      <div class="col">
+		<div id="chart-light">FusionCharts XT will load here!</div>
+	  </div>
+	  
+    </div>
+
+	</div>	
+</div>
+
+</body>
+</html>

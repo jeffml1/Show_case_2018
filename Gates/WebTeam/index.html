@@ -1,0 +1,361 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Orokonui Ecosanctuary</title>
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="images/OrokonuiEcoBurst.ico" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap Core Css -->
+    <link href="plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+  <!-- Bootstrap -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
+
+    <!-- Waves Effect Css -->
+    <link href="plugins/node-waves/waves.css" rel="stylesheet" />
+
+    <!-- Animation Css -->
+    <link href="plugins/animate-css/animate.css" rel="stylesheet" />
+
+    <!-- Morris Chart Css-->
+    <link href="plugins/morrisjs/morris.css" rel="stylesheet" />
+
+    <!-- Custom Css -->
+    <link href="css/style.css" rel="stylesheet">
+	
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="css/themes/all-themes.css" rel="stylesheet" />
+
+        <!-- Leaflet Map -->
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
+          integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+          crossorigin=""/>
+
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"
+            integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
+            crossorigin=""></script>
+
+
+    <!-- JQuery -->
+
+    <script src="jquery-3.3.1.min.js"></script>
+
+    <script src="mqttws31.js" type="text/javascript"></script>
+
+<!-- Decrypt -->
+  <script type="text/javascript" src="Decrypt.js"></script>
+	
+	<!-- Custom -->
+
+
+</head>
+
+<body class="theme-green">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+    <!-- Top Bar -->
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+                <a href="javascript:void(0);" class="bars"></a>
+                <a class="navbar-brand" href="index.html">OROKONUI ECOSANCTUARY</a>
+            </div>
+        </div>
+    </nav>
+    <!-- #Top Bar -->
+    <section>
+        <!-- Left Sidebar -->
+        <aside id="leftsidebar" class="sidebar">
+            <!-- Menu -->
+            <div class="menu">
+                <ul class="list">
+                    <li class="header">MAIN NAVIGATION</li>
+                    <li class="active">
+                        <a href="index.html">
+                            <i class="material-icons">home</i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pages/typography.html">
+                            <i class="material-icons">text_fields</i>
+                            <span>Typography</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pages/helper-classes.html">
+                            <i class="material-icons">layers</i>
+                            <span>Helper Classes</span>
+                        </a>
+                    </li>
+                    <li class="header">NOTIFICATIONS</li>
+                    <div class="tab-content" id="rightsidebar" class="right-sidebar">
+                    <div role="tabpanel" class="tab-pane fade in active in active" id="settings">
+                    <div class="demo-settings">
+                    </div>
+                </div>
+            </div>
+                </ul>
+            </div>
+            <!-- #Menu -->
+            <!-- Footer -->
+            <div class="legal">
+                <div class="copyright">
+                    &copy; 2016 - 2017 <a href="javascript:void(0);">AdminBSB - Material Design</a>.
+                </div>
+                <div class="version">
+                    <b>Version: </b> 1.0.5
+                </div>
+            </div>
+            <!-- #Footer -->
+        </aside>
+        <!-- #END# Left Sidebar -->
+        <!-- Right Sidebar -->
+        <aside id="rightsidebar" class="right-sidebar">
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane fade in active in active" id="settings">
+                    <div class="demo-settings">
+                        <div class="panel-switch-btn">
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!-- #END# Right Sidebar -->
+    </section>
+
+    <section class="content">
+        <div class="container-fluid">
+
+            <!-- CPU Usage -->
+            <div class="row clearfix">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="card">
+                        <div class="header">
+                            <div class="row clearfix">
+                                <div class="col-xs-12 col-sm-6">
+                                    <h2>MAP DASHBOARD</h2>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 align-right">
+                                    <div class="switch panel-switch-btn">
+                                        <span class="m-r-10 font-12">MAP OVERLAY</span>
+                                        <label>OFF<input type="checkbox" id="realtime" checked><span class="lever switch-col-cyan"></span>ON</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="body">
+
+                            <div id="mapid" style="width: 99%; height: 735px;"></div>
+							
+							<button onclick="client.connect(options);">1. Connect</button>
+						   <button onclick="client.subscribe('#', {qos: 2}); alert('Subscribed');">2. Subscribe</button>
+						   <button onclick="publish('Hello Foo !','testtopic/bar',2);">3. Publish</button>
+						   <button onclick="client.disconnect();">(4. Disconnect)</button>
+						   <div id="messages"></div>
+
+                            <script>
+                                        var mymap = L.map('mapid').setView([-45.7765, 170.6045], 15);
+
+
+                                        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+                                            maxZoom: 30,
+                                            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+                                            '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                                            'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+                                            id: 'mapbox.streets'
+                                        }).addTo(mymap);
+
+                                        const closedColour = '#228B22'
+                                        const openColour = '#B22222'
+
+                                        const closedStyle = `
+                                        background-color: ${closedColour};
+                                        width: 3rem;
+                                        height: 3rem;
+                                        display: block;
+                                        left: -1.5rem;
+                                        top: -1.5rem;
+                                        position: relative;
+                                        border-radius: 3rem 3rem 0;
+                                        transform: rotate(45deg);
+                                        border: 1px solid #FFFFFF`
+
+                                        const openStyle = `
+                                        background-color: ${openColour};
+                                        width: 3rem;
+                                        height: 3rem;
+                                        display: block;
+                                        left: -1.5rem;
+                                        top: -1.5rem;
+                                        position: relative;
+                                        border-radius: 3rem 3rem 0;
+                                        transform: rotate(45deg);
+                                        border: 1px solid #FFFFFF`
+
+
+                                        const Closedicon = L.divIcon({
+                                        className: "my-custom-pin",
+                                        iconAnchor: [0, 24],
+                                        labelAnchor: [-6, 0],
+                                        popupAnchor: [0, -36],
+                                        html: `<span style="${closedStyle}" />`
+                                        })
+
+                                        const Openicon = L.divIcon({
+                                        className: "my-custom-pin",
+                                        iconAnchor: [0, 24],
+                                        labelAnchor: [-6, 0],
+                                        popupAnchor: [0, -36],
+                                        html: `<span style="${openStyle}" />`
+                                        })
+                                        
+                                        if(gateStatus == true) {
+                                            L.marker([-45.77176289, 170.58974929], { icon: Closedicon }).addTo(mymap).on('click', onClick);    
+                                            function onClick(e) {
+                                            var popup = L.popup()
+                                        .setLatLng([e.latlng.lat,e.latlng.lng])
+                                        .setContent("<p style='border-style: groove'> Node One current status: <span style='color: green'>Online!</span> </p><img src='images/IMG_20180315_141311.jpg' alt='Gate' style='width:250px; height:250px;'>")
+                                        .openOn(mymap);
+                                        console.log(e);
+                                        }
+                                        }
+                                        else {
+                                             L.marker([-45.77176289, 170.58974929], { icon: Openicon }).addTo(mymap).on('click', onClick);
+                                             function onClick(e) {
+                                            var popup = L.popup()
+                                        .setLatLng([e.latlng.lat,e.latlng.lng])
+                                        .setContent("<p style='border-style: groove'> Node One current status: <span style='color: red'>Offline!</span> </p><img src='images/IMG_20180315_141311.jpg' alt='Gate' style='width:250px; height:250px;'>")
+                                        .openOn(mymap);
+                                        console.log(e);
+                                        }
+                                        }
+
+                                        L.marker([-45.75391646, 170.59520197], {icon: Closedicon}).addTo(mymap).on('click', onClick);
+
+                                        L.marker([-45.76046078, 170.58931915], {icon: Closedicon}).addTo(mymap).on('click', onClick);
+
+                                        L.marker([-45.7604799, 170.58921334], {icon: Closedicon}).addTo(mymap).on('click', onClick);
+										
+										L.marker([-45.77654335, 170.60429211], {icon: Closedicon}).addTo(mymap).on('click', onClick);
+										
+										L.marker([-45.77672327, 170.6047703], {icon: Closedicon}).addTo(mymap).on('click', onClick);
+
+                                        L.marker([-45.75776153, 170.58775923], {icon: Closedicon}).addTo(mymap).on('click', onClick);
+
+                                        L.marker([-45.7522133, 170.59129614], {icon: Closedicon}).addTo(mymap).on('click', onClick);
+
+                                        L.marker([-45.75141628, 170.5930501], {icon: Closedicon}).addTo(mymap).on('click', onClick);
+
+                                        L.marker([-45.77442314, 170.59030724], {icon: Closedicon}).addTo(mymap).on('click', onClick);
+
+                                        L.marker([-45.75717737, 170.60285111], {icon: Closedicon}).addTo(mymap).on('click', onClick);
+
+                                        L.marker([-45.77666005, 170.60467544], {icon: Closedicon}).addTo(mymap).on('click', onClick);
+
+                                        L.marker([-45.77642041, 170.60582409], {icon: Closedicon}).addTo(mymap).on('click', onClick);
+
+                                        L.marker([-45.77611979, 170.60543691], {icon: Closedicon}).addTo(mymap).on('click', onClick);
+
+                                        L.marker([-45.77572278, 170.60532158], {icon: Closedicon}).addTo(mymap).on('click', onClick);
+
+                                        L.marker([-45.77266951, 170.60700296], {icon: Closedicon}).addTo(mymap).on('click', onClick);
+
+                                        L.marker([-45.77279332, 170.60653512], {icon: Closedicon}).addTo(mymap).on('click', onClick);
+
+                                        L.marker([-45.77363477, 170.60333995], {icon: Closedicon}).addTo(mymap).on('click', onClick);
+
+                                        L.marker([-45.7751476, 170.60384615], {icon: Closedicon}).addTo(mymap).on('click', onClick);
+
+                                        L.marker([-45.77878535, 170.60108889], {icon: Closedicon}).addTo(mymap).on('click', onClick);
+
+                                        L.marker([-45.77597899, 170.60068258], {icon: Closedicon}).addTo(mymap).on('click', onClick);
+
+                                        L.marker([-45.7766707, 170.60033864], {icon: Closedicon}).addTo(mymap).on('click', onClick);
+                                        
+
+                                    </script>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jquery Core Js -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core Js -->
+    <script src="plugins/bootstrap/js/bootstrap.js"></script>
+
+    <!-- Select Plugin Js -->
+    <script src="plugins/bootstrap-select/js/bootstrap-select.js"></script>
+
+    <!-- Slimscroll Plugin Js -->
+    <script src="plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="plugins/node-waves/waves.js"></script>
+
+    <!-- Jquery CountTo Plugin Js -->
+    <script src="plugins/jquery-countto/jquery.countTo.js"></script>
+
+    <!-- Morris Plugin Js -->
+    <script src="plugins/raphael/raphael.min.js"></script>
+    <script src="plugins/morrisjs/morris.js"></script>
+
+    <!-- ChartJs -->
+    <script src="plugins/chartjs/Chart.bundle.js"></script>
+
+    <!-- Flot Charts Plugin Js -->
+    <script src="plugins/flot-charts/jquery.flot.js"></script>
+    <script src="plugins/flot-charts/jquery.flot.resize.js"></script>
+    <script src="plugins/flot-charts/jquery.flot.pie.js"></script>
+    <script src="plugins/flot-charts/jquery.flot.categories.js"></script>
+    <script src="plugins/flot-charts/jquery.flot.time.js"></script>
+
+    <!-- Sparkline Chart Plugin Js -->
+    <script src="plugins/jquery-sparkline/jquery.sparkline.js"></script>
+
+    <!-- Custom Js -->
+    <script src="js/admin.js"></script>
+    <script src="js/pages/index.js"></script>
+
+    <!-- Demo Js -->
+    <script src="js/demo.js"></script>
+</body>
+
+</html>
